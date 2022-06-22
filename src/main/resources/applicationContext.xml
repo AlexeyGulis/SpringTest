@@ -21,11 +21,15 @@
                       class="org.example.PopMusic">
                 </bean>
                 <bean id="classic"
-                      class="org.example.ClassicalMusic">
+                      class="org.example.ClassicalMusic"
+                      init-method="doMyInit"
+                      destroy-method="doMyDestroy"
+                      factory-method="getClassicalMusic"
+                >
                 </bean>
             </list>
         </property>
-        <property name="name" value="${musicPlayer.name}" />
+        <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
