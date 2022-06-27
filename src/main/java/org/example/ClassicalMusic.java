@@ -1,9 +1,21 @@
 package org.example;
 
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 @Component
 public class ClassicalMusic implements Music{
-    private ClassicalMusic(){}
+
+    private List<String> songs;
+    private ClassicalMusic(){
+        songs = new ArrayList<>();
+        songs.add("Simphony №3");
+        songs.add("Simphony №7");
+        songs.add("Lunar Sonata");
+    }
 
     public static ClassicalMusic getClassicalMusic(){
         return new ClassicalMusic();
@@ -15,6 +27,7 @@ public class ClassicalMusic implements Music{
         System.out.println("Destroy method");
     }
     public String getSong(){
-        return "Bah";
+        Random a = new Random();
+        return songs.get(a.nextInt(songs.size()));
     }
 }

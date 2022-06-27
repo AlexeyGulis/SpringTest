@@ -18,8 +18,6 @@ public class MusicPlayer {
         this.music1 = music1;
         this.music2 = music2;
     }
-
-
     public String getName() {
         return name;
     }
@@ -36,7 +34,14 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public String playMusic() {
-        return "Playing: " + music1.getSong() + ", " + music2.getSong();
+    public String playMusic(Type typeOfSong) {
+        switch(typeOfSong){
+            case ROCK:
+                return "Playing: " + music1.getSong();
+            case CLASSICAL:
+                return "Playing: " + music2.getSong();
+            default:
+                return "This type of song unavailable.";
+        }
     }
 }
