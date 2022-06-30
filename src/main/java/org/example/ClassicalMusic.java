@@ -9,11 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
 public class ClassicalMusic implements Music{
 
     private List<String> songs;
-    private ClassicalMusic(){
+    public ClassicalMusic(){
         songs = new ArrayList<>();
         songs.add("Simphony №3");
         songs.add("Simphony №7");
